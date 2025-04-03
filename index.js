@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut, Tray, Menu, ipcMain } = require('electron');
+const { app, BrowserWindow, globalShortcut, Tray, Menu, ipcMain, Notification } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -60,7 +60,7 @@ function setupTray() {
     }
   ]);
 
-  tray.setToolTip('Webcam Screenshot App');
+  tray.setToolTip('Rlogic Webcam Screenshot App');
   tray.setContextMenu(contextMenu);
 
   // Show window on tray icon click

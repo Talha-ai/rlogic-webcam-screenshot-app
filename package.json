@@ -2,7 +2,7 @@
   "name": "rlogic-webcam-screenshot-app",
   "version": "1.0.0",
   "description": "An Electron app that takes webcam screenshots with a hotkey",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win",
@@ -18,8 +18,7 @@
     "appId": "com.yourname.webcamscreenshot",
     "productName": "Webcam Screenshot",
     "win": {
-      "target": "nsis",
-      "icon": "assets/icon.ico"
+      "target": "nsis"
     },
     "directories": {
       "output": "dist"
