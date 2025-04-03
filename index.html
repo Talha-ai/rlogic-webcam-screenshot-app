@@ -1,0 +1,110 @@
+<!-- index.html - App's renderer process HTML -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Webcam Screenshot App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .webcam-container {
+      margin: 20px 0;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #webcam {
+      width: 640px;
+      height: 480px;
+      background-color: #333;
+    }
+
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .success {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+
+    .instructions {
+      background-color: #d9edf7;
+      color: #31708f;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      max-width: 640px;
+    }
+
+    kbd {
+      background-color: #eee;
+      border-radius: 3px;
+      border: 1px solid #b4b4b4;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      color: #333;
+      display: inline-block;
+      font-size: 0.85em;
+      font-weight: bold;
+      line-height: 1;
+      padding: 2px 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Webcam Screenshot App</h1>
+
+  <div class="instructions">
+    <p>Press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>W</kbd> to take a webcam screenshot, even when the app is
+      minimized.</p>
+    <p>Screenshots are saved to your Pictures folder in a directory called "WebcamScreenshots".</p>
+  </div>
+
+  <div class="webcam-container">
+    <video id="webcam" autoplay></video>
+    <button id="screenshot-btn">Take Screenshot</button>
+  </div>
+
+  <div id="status-message"></div>
+
+  <script src="renderer.js"></script>
+</body>
+
+</html>
