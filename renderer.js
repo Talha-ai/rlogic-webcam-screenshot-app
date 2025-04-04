@@ -29,7 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize the webcam stream
 function initializeWebcam() {
-  navigator.mediaDevices.getUserMedia({ video: true })
+  const constraints = {
+    video: {
+      width: { ideal: 1920 },
+      height: { ideal: 1080 }
+    }
+  };
+  navigator.mediaDevices.getUserMedia(constraints)
     .then((stream) => {
       video.srcObject = stream;
     })
